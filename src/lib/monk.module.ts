@@ -146,18 +146,21 @@ export class MonkModule {
   private static createCollectionProviders = (
     collections?: Array<ModelType<any>>,
   ): FactoryProvider<Promise<ICollection<any>>>[] => {
-    return (collections ?? []).map(f => {
+    return (collections ?? []).map((f) => {
       return {
         provide: createMonkCollectionToken(f),
         useFactory: async (database: string, options: MonkOptions) => {
-          const collectionName = ModelRegistrations.get(f)?.collectionName
-            ?.length
+          const modelOptions = ModelRegistrations.get(f);
+          const collectionName = modelOptions?.collectionName?.length
             ? ModelRegistrations.get(f).collectionName
             : `${snakeCase(f.name)}s`;
-
-          return await monk(database, options).then(db => {
+          return await monk(database, options).then((db) => {
             db.addMiddleware(classTransformerMiddlewareFactory(f));
-            return db.get(collectionName);
+            const collection = db.get(collectionName);
+            if (collection) {
+              modelOptions.collectionOptions?.(collection);
+            }
+            return collection;
           });
         },
         inject: [MONK_DATABASE_TOKEN, MONK_OPTIONS_TOKEN],
