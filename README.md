@@ -6,6 +6,12 @@
 <div align="center">
   <strong>A thin wrapping layer around the <a href="https://automattic.github.io/monk/" target="_blank">monk</a> package for clean <a href="https://github.com/nestjs">NestJS</a> dependency injection.</strong>
 </div>
+<br />
+<div align="center">
+<a href="https://www.npmjs.com/package/nest-monk"><img src="https://img.shields.io/npm/v/nest-monk.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/package/nest-monk"><img src="https://img.shields.io/npm/l/nest-monk.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/package/nest-monk"><img src="https://img.shields.io/npm/dm/nest-monk.svg" alt="NPM Downloads" /></a>
+</div>
 
 # Features
 
