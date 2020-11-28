@@ -2,8 +2,6 @@ import { Logger } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { ModelType } from './types';
 
-const logger = new Logger('classTransformerMiddlewareFactory');
-
 export function classTransformerMiddlewareFactory<T>(type: ModelType<T>) {
   return context => next => (args, method) => {
     return next(args, method).then(res => {
@@ -13,7 +11,7 @@ export function classTransformerMiddlewareFactory<T>(type: ModelType<T>) {
         } catch (ex) {
           res = null;
           const error = ex as Error;
-          logger.error(ex.message, ex.stack);
+          new Logger('classTransformerMiddlewareFactory').error(ex.message, ex.stack);
         }
       }
       return res;
