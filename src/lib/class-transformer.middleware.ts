@@ -11,7 +11,10 @@ export function classTransformerMiddlewareFactory<T>(type: ModelType<T>) {
         } catch (ex) {
           res = null;
           const error = ex as Error;
-          new Logger('classTransformerMiddlewareFactory').error(ex.message, ex.stack);
+          new Logger('classTransformerMiddlewareFactory').error(
+            error.message,
+            error.stack,
+          );
         }
       }
       return res;
