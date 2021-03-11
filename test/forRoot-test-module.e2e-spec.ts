@@ -1,4 +1,3 @@
-import { MongoMemoryServer } from 'mongodb-memory-server';
 import { Module, Injectable, Controller, Get } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ICollection } from 'monk';
@@ -47,6 +46,7 @@ class UserController {
       },
     }),
   ],
+  controllers: [UserController],
   providers: [UserService],
   exports: [UserService],
 })

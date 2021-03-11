@@ -1,4 +1,4 @@
-import { Inject, Type } from '@nestjs/common';
+import { Inject } from '@nestjs/common';
 import { createMonkCollectionToken, createMonkRepositoryToken } from './tokens';
 import { ModelType, ModelOptions } from './types';
 

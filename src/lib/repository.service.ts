@@ -7,7 +7,7 @@ export class Repository<T> {
     return this.collection.findOne({ _id: convertToMongoId(id).toHexString() });
   }
 
-  list(query: string | Object) {
+  list(query: string | { [key: string]: any }) {
     return this.collection.find(query);
   }
 

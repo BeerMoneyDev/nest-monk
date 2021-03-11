@@ -19,7 +19,7 @@ export type AsyncProvider<T> =
   | Omit<ValueProvider<T>, 'provide'>;
 
 export interface MonkOptions {
-  collectionOptions?: Object;
+  collectionOptions?: any;
   poolSize?: number;
   ssl?: boolean;
   sslValidate?: boolean;
@@ -50,8 +50,8 @@ export interface MonkOptions {
   raw?: boolean;
   promoteLongs?: boolean;
   bufferMaxEntries?: number;
-  readPreference?: Object | null;
-  pkFactory?: Object | null;
-  promiseLibrary?: Object | null;
-  readConcern?: Object | null;
+  readPreference?: any;
+  pkFactory?: any;
+  promiseLibrary?: any;
+  readConcern?: any;
 }
