@@ -204,3 +204,7 @@ class UserController {
 ## License
 
 nest-monk is MIT licensed.
+
+## Contributing
+
+Nest-monk is released through [semantic-release](https://github.com/semantic-release/semantic-release). Effectively this means that versioning is based off commit messages. Please review [angular-changelog-convention](https://github.com/conventional-changelog-archived-repos/conventional-changelog-angular/blob/master/convention.md) and commit under that format. Otherwise semantic-release won't detect commits which should version the library.
